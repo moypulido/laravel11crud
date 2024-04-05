@@ -24,13 +24,33 @@ Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, El
 ## Uso
 
 --**Obtener un token de acceso:**
-'''php
+```bash
 curl -X POST \
   http://tu-domino.com/sanctum/token \
   -H 'Content-Type: application/json' \
   -d '{
     "email": "tu@email.com",
     "password": "tu-contraseña"
+}'
+
+--**Obtener información del usuario autenticado:**
+curl -X GET \
+  http://tu-domino.com/user \
+  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO'
+
+--**Obtener lista de estudiantes:**
+curl -X GET \
+  http://tu-domino.com/students \
+  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO'
+
+--**Crear un nuevo estudiante:**
+curl -X POST \
+  http://tu-domino.com/students \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO' \
+  -d '{
+    "name": "Nombre del Estudiante",
+    "age": 20
 }'
 
 ## Contribuciones
