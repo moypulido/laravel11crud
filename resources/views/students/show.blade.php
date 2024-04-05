@@ -1,4 +1,23 @@
 <x-app-layout>
+
+    @if ($errors->any())
+        <div id="errorMessage" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert">
+            <strong class="font-bold">Validation Error!</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <script>
+            setTimeout(function() {
+                var errorMessage = document.getElementById("errorMessage");
+                errorMessage.remove();
+            }, 3000);
+        </script>
+    @endif
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Student Details') }}
