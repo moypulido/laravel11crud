@@ -15,6 +15,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
 
-Route::resource('students', StudentController::class);
+    Route::resource('students', StudentController::class);
+});

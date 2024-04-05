@@ -12,8 +12,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::all();
-        return view('students.index', compact('student'));
+        $students = Student::all();
+        return view('students.index', compact('students'));
     }
 
     /**
