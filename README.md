@@ -3,13 +3,15 @@
 
 ## Acerca de la aplicación
 
-Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) con una API desarrollada en Laravel. La aplicación permite realizar operaciones básicas en una base de datos, como añadir, leer, actualizar y eliminar registros. Es útil para aquellos que desean aprender cómo construir una API simple con Laravel o necesitan un punto de partida para sus propios proyectos.
+Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) con una API desarrollada en Laravel 11. La aplicación permite realizar operaciones básicas en una base de datos, como añadir, leer, actualizar y eliminar registros.
 
 ## Características
 
-- Crear, leer, actualizar y eliminar registros a través de una API.
-- Utiliza Laravel, un framework PHP moderno y potente.
-- Incluye un archivo de entorno para configurar fácilmente la aplicación según las necesidades del usuario.
+- **Crear, Leer, Actualizar y Eliminar (CRUD) a través de una API:** La aplicación permite realizar operaciones básicas de creación, lectura, actualización y eliminación de registros mediante una API RESTful.
+- **Autenticación de credenciales para generar tokens de acceso:** Utiliza Laravel Passport para proporcionar autenticación de credenciales y generar tokens de acceso, lo que permite a los usuarios autenticarse y acceder a los recursos protegidos de la API.
+- **Utiliza Laravel:** La aplicación está construida sobre Laravel, un framework PHP moderno y potente que facilita el desarrollo de aplicaciones web robustas y escalables.
+- **Archivo de entorno para configuración:** Incluye un archivo de entorno (.env) que permite configurar fácilmente la aplicación según las necesidades del usuario, como la configuración de la base de datos, el entorno de la aplicación y las claves de API.
+
 
 ## Instalación
 
@@ -18,12 +20,18 @@ Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, El
 3. Copia el archivo de entorno de ejemplo y modifica según tus necesidades: `cp .env.example .env`
 4. Genera una clave de aplicación: `php artisan key:generate`
 5. Ejecuta las migraciones para crear la estructura de la base de datos: `php artisan migrate`
-6. (Opcional) Si tienes datos de prueba, puedes ejecutar las semillas: `php artisan db:seed`
-
 
 ## Uso
 
-Aquí puedes describir cómo usar tu aplicación, con ejemplos de comandos o instrucciones para acceder a ciertas características.
+--**Obtener un token de acceso:**
+'''php
+curl -X POST \
+  http://tu-domino.com/sanctum/token \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "email": "tu@email.com",
+    "password": "tu-contraseña"
+}'
 
 ## Contribuciones
 
