@@ -31,7 +31,7 @@ curl -X POST \
   -d '{
     "email": "tu@email.com",
     "password": "tu-contraseña"
-}'
+}''''
 
 --**Obtener información del usuario autenticado:**
 curl -X GET \
