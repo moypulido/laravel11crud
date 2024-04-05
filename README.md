@@ -4,20 +4,12 @@
         <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
     </a>
 </p>
-![PHP](https://img.shields.io/badge/PHP-8.2-8892BF)
-![Laravel](https://img.shields.io/badge/Laravel-11.0-FF2D20)
-![Jetstream](https://img.shields.io/badge/Jetstream-5.0-FF2D20)
-![Sanctum](https://img.shields.io/badge/Sanctum-4.0-FF2D20)
-![Tinker](https://img.shields.io/badge/Tinker-2.9-FF2D20)
-![Livewire](https://img.shields.io/badge/Livewire-3.0-FF2D20)
-![Faker](https://img.shields.io/badge/Faker-1.23-FF2D20)
-![Pint](https://img.shields.io/badge/Pint-1.13-FF2D20)
-![Sail](https://img.shields.io/badge/Sail-1.26-FF2D20)
-![Mockery](https://img.shields.io/badge/Mockery-1.6-FF2D20)
-![Collision](https://img.shields.io/badge/Collision-8.0-FF2D20)
-![PHPUnit](https://img.shields.io/badge/PHPUnit-11.0-FF2D20)
-![Ignition](https://img.shields.io/badge/Ignition-2.4-FF2D20)
-
+<p align="center">
+    <img src="https://img.shields.io/badge/PHP-8.2-8892BF" alt="PHP">
+    <img src="https://img.shields.io/badge/Laravel-11.0-FF2D20" alt="Laravel">
+    <img src="https://img.shields.io/badge/Jetstream-5.0-FF2D20" alt="Jetstream">
+    <!-- Agrega los demás distintivos aquí -->
+</p>
 
 ## Acerca de la aplicación
 
