@@ -1,4 +1,4 @@
-# CRUD para laravel 11
+# CRUD for Laravel 11
 <p align="center">
     <a href="https://laravel.com" target="_blank">
         <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
@@ -8,78 +8,74 @@
     <img src="https://img.shields.io/badge/PHP-8.2-8892BF" alt="PHP">
     <img src="https://img.shields.io/badge/Laravel-11.0-FF2D20" alt="Laravel">
     <img src="https://img.shields.io/badge/Jetstream-5.0-FF2D20" alt="Jetstream">
-    <!-- Agrega los demás distintivos aquí -->
+    <!-- Add other badges here -->
 </p>
 
-## Acerca de la aplicación
+## About the application
 
-Este proyecto es un ejemplo de una aplicación CRUD (Crear, Leer, Actualizar, Eliminar) con una API desarrollada en Laravel 11. La aplicación permite realizar operaciones básicas en una base de datos, como añadir, leer, actualizar y eliminar registros.
+This project is an example of a CRUD (Create, Read, Update, Delete) application with an API developed in Laravel 11. The application allows basic operations on a database, such as adding, reading, updating, and deleting records.
 
-## Características
+## Features
 
-- **Crear, Leer, Actualizar y Eliminar (CRUD) a través de una API:** La aplicación permite realizar operaciones básicas de creación, lectura, actualización y eliminación de registros mediante una API RESTful.
-- **Autenticación de credenciales para generar tokens de acceso:** Utiliza Laravel sanctum para proporcionar autenticación de credenciales y generar tokens de acceso, lo que permite a los usuarios autenticarse y acceder a los recursos protegidos de la API.
-- **Utiliza Laravel:** La aplicación está construida sobre Laravel, un framework PHP moderno y potente que facilita el desarrollo de aplicaciones web robustas y escalables.
-- **Archivo de entorno para configuración:** Incluye un archivo de entorno (.env) que permite configurar fácilmente la aplicación según las necesidades del usuario, como la configuración de la base de datos, el entorno de la aplicación y las claves de API.
+- **Create, Read, Update, and Delete (CRUD) through an API:** The application allows basic operations of creating, reading, updating, and deleting records through a RESTful API.
+- **Credential authentication to generate access tokens:** It uses Laravel sanctum to provide credential authentication and generate access tokens, allowing users to authenticate and access the API's protected resources.
+- **Uses Laravel:** The application is built on Laravel, a modern and powerful PHP framework that facilitates the development of robust and scalable web applications.
+- **Environment file for configuration:** Includes an environment file (.env) that allows the application to be easily configured according to the user's needs, such as database configuration, application environment, and API keys.
 
+## Installation
 
-## Instalación
+1. Clone this repository: `git clone https://github.com/moypulido/laravel11crud.git`
+2. Install the dependencies: `composer install`
+3. Copy the example environment file and modify it according to your needs: `cp .env.example .env`
+4. Generate an application key: `php artisan key:generate`
+5. Run the migrations to create the database structure: `php artisan migrate`
 
-1. Clona este repositorio: `git clone https://github.com/moypulido/laravel11crud.git`
-2. Instala las dependencias: `composer install`
-3. Copia el archivo de entorno de ejemplo y modifica según tus necesidades: `cp .env.example .env`
-4. Genera una clave de aplicación: `php artisan key:generate`
-5. Ejecuta las migraciones para crear la estructura de la base de datos: `php artisan migrate`
+## Usage
 
-## Uso
-
---**Obtener un token de acceso:**
+--**Get an access token:**
 ```bash
 curl -X POST \
-  http://tu-domino.com/sanctum/token \
+  http://your-domain.com/sanctum/token \
   -H 'Content-Type: application/json' \
   -d '{
-    "email": "tu@email.com",
-    "password": "tu-contraseña"
+    "email": "your@email.com",
+    "password": "your-password"
 }'
 ```
 
---**Obtener información del usuario autenticado:**
+--**Get information about the authenticated user:**
 ```bash
 curl -X GET \
-  http://tu-domino.com/user \
-  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO'
+    http://your-domain.com/user \
+    -H 'Authorization: Bearer YOUR-ACCESS-TOKEN'
 ```
 
---**Obtener lista de estudiantes:**
+--**Get a list of students:**
 ```bash
 curl -X GET \
-  http://tu-domino.com/students \
-  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO'
+  http://your-domain.com/students \
+  -H 'Authorization: Bearer YOUR-ACCESS-TOKEN'
 ```
 
---**Crear un nuevo estudiante:**
+--**Create a new student:**
 ```bash
 curl -X POST \
-  http://tu-domino.com/students \
+  http://your-domain.com/students \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer TU-TOKEN-DE-ACCESO' \
+  -H 'Authorization: Bearer YOUR-ACCESS-TOKEN' \
   -d '{
-    "name": "Nombre del Estudiante",
+    "name": "Student Name",
     "age": 20
 }'
 ```
 
-## Contribuciones
+Contributions
+This project has a purely educational focus. I am delighted to receive contributions from anyone who wants to learn or help me improve my skills.
 
-Este proyecto tiene un enfoque puramente educativo. Estoy encantado de recibir contribuciones de cualquier persona que desee aprender o ayudarme a mejorar mis habilidades.
+Thank you for considering contributing to this application!
 
-¡Gracias por considerar contribuir a esta aplicación!
+Code of Conduct
+To ensure that this application's community is welcoming to all, please review and comply with the Code of Conduct.
 
-## Código de Conducta
-
-Para garantizar que la comunidad de esta aplicación sea acogedora para todos, por favor revisa y cumple con el [Código de Conducta](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Licencia
-
-Esta aplicación está bajo la licencia de software de código abierto [MIT license](https://opensource.org/licenses/MIT).
+License
+This application is under the open-source software MIT license.
