@@ -17,14 +17,6 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -47,15 +39,8 @@ class StudentController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $student = Student::find($id);
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -63,7 +48,20 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'age' => 'required|numeric',
+        ]);
+
+        $student = Student::find($id);
+        if ($student) {
+            $student->name = $request->input('name');
+            $student->age = $request->input('age');
+            $student->save();
+            return redirect()->route('students.index')->with('success', 'Student updated successfully');
+        } else {
+            return redirect()->route('students.index')->with('error', 'Student not found');
+        }
     }
 
     /**
