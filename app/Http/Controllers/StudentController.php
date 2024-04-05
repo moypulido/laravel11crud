@@ -29,7 +29,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'age' => 'required|numeric',
+        ]);
+
+        $student = new Student();
+        $student->name = $request->input('name');
+        $student->age = $request->input('age');
+        $student->save();
+
+        return redirect()->route('students.index')->with('success', 'Student created successfully');
     }
 
     /**
@@ -61,6 +71,12 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $student = Student::find($id);
+        if ($student) {
+            $student->delete();
+            return redirect()->route('students.index')->with('success', 'Student deleted successfully');
+        } else {
+            return redirect()->route('students.index')->with('error', 'Student not found');
+        }
     }
 }
